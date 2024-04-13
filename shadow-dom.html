@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color: red;
+        }
+        /* Suppose some library using same class name */
+        /* .error{
+            color: brown;
+        } */
+
+    </style>
+</head>
+<body>
+    <p class="error">
+        This is text content
+    </p>
+    <!-- <input type="range"> -->
+    <cust-tag data="this is shadow dom text"></cust-tag>
+</body>
+</html>
+
+<script>
+
+customElements.define('cust-tag',
+    class extends HTMLElement{
+        connectedCallback(){
+            const temp  = this.attachShadow({mode:'open'}); // If we write close we can see the value
+            // temp.innerHTML = `<p>Hello user</p>`
+            temp.innerHTML = `<p class="error"> ${this.getAttribute('data')}</p>`
+            // Since we added error class but it will not reflect as it belong to show
+        }
+    }
+)
+
+</script>
