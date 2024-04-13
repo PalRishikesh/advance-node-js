@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+    </head>
+    <body>
+        <h1>JS Date and Time</h1>
+        
+        <input type="datetime-local" id="dateInput"/>
+        <button onclick="getDateTime()">Get Date</button>
+        <button onclick="compareDate()">Compare Date</button>
+    </body>
+</html>
+<script>
+    function getDateTime(){
+        let data = document.getElementById("dateInput").value;
+        console.log(data);
+        let date = new Date(data);
+        console.log(date.getDay());
+        console.log(date.getDate());
+        console.log(date.getMonth());
+        console.log(date.getFullYear());
+        console.log(date.getHours());
+    }
+    function compareDate(){
+        let data = document.getElementById("dateInput").value;
+        let selectedDate = new Date(data);
+        let currentDate = new Date();
+        // console.log(selectedDate);
+        // console.log(currentDate);
+        // Converting into time stamp, we can campare which date is greater or not
+        // console.log(selectedDate.getTime() > currentDate.getTime());
+        // console.log(selectedDate.getTime());
+        // console.log(currentDate.getTime());
+        const diffTime = Math.abs(selectedDate.getTime() - currentDate.getTime());
+        const diffDay = Math.ceil(diffTime/(1000*60*60*24)) // milisecond, second, minutes, hours
+        console.log("Days ",diffDay);
+
+    }
+</script>
