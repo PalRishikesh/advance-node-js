@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="next-button">Next Click</button>
+  </body>
+</html>
+
+<script>
+  function* makeIteratorGeneator(start, end, stepSize = 1) {
+    for (let i = start; i <= end; i += stepSize) {
+      yield i;
+    }
+  }
+
+  const myIteratorGeneator = makeIteratorGeneator(1, 10, 1);
+  let btn = document.getElementById("next-button");
+
+  btn.addEventListener("click", function () {
+    btn.innerText = myIteratorGeneator.next().value;
+
+    // if (myIteratorGeneator.next().done) {
+    //   btn.disabled = true;
+    //   btn.innerText = "No more values";
+    // }
+  });
+</script>

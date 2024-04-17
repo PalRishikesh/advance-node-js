@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./closure.js"></script> -->
+</head>
+<body>
+    <p id="myName">Rishi</p>
+    <br>
+    <button id="myBtn">Click</button>
+</body>
+</html>
+
+<script>
+    const myName = document.getElementById("myName");
+const btn = document.getElementById("myBtn");
+
+function makeTextSizer(size){
+    function changeSize(){
+        myName.style.fontSize = `${size}px`;
+    }
+    return changeSize;
+}
+
+const size10 = makeTextSizer(10)
+const size20 = makeTextSizer(20)
+const size30 = makeTextSizer(30)
+const size40 = makeTextSizer(40)
+
+
+btn.addEventListener("click",size10);
+// btn.addEventListener('click',function(){
+//     alert("jhi");
+// })
+
+</script>

@@ -2,8 +2,13 @@
 /** We can't access function inner value out side of function (Opp we can do) */
 
 /** Closure */
-/** A function with lexical scope is know as closure */
+/**Closure in JavaScript is a form of lexical scoping used to preserve variables 
+ * from the outer scope of a function in the inner scope of a function. */
+
 /** Inner function rember the value of out outer function  at the time of returning value*/
+
+/** A function with lexical scope is know as closure */
+
 
 let data = 10;
 function test(){
@@ -40,5 +45,39 @@ function test4(){
 }
 
 let result4 = test4();
-console.log(result4())
-console.log(result4())
+// console.log(result4())
+// console.log(result4())
+
+/** New example */
+function adder(num){
+    function add(x){
+        console.log(num + x);
+    }
+    return add;
+}
+
+const addTo5 = adder(5);
+const addTo10 = adder(10);
+addTo5(1)
+addTo5(2)
+addTo10(3);
+addTo10(4);
+
+function makeCounter(){
+    let count = 1;
+    function increment(){
+        console.log(count++);
+    }
+    return increment;
+}
+const incrase1 = makeCounter();
+incrase1();
+incrase1();
+incrase1();
+
+const incrase2 = makeCounter();
+incrase2();
+incrase2();
+
+
+

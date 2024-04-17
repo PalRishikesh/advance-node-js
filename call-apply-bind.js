@@ -30,7 +30,7 @@ let teacher = {
 /** We are declaring getEmail fuction again and again */
 // console.log(teacher.getEmail());
 /** Here we are assing student function to teacher object with the help of call method */ 
-// console.log(student.getEmail.call(teacher));
+// console.log(student.getEmail.call(teacher)); // Taking function from one object that is available
 
 
 function getEmailId(){
@@ -54,7 +54,13 @@ function choseSubjectApply(subject1, subject2){
     console.log(subject1, subject2);
 }
 
-// choseSubjectApply.apply(teacher,["Maths","Geography"])
+/** Below sample code will not work */
+function choseSubjectApply2(applyArray){
+    // console.log(subject1, subject2);
+    // console.log(applyArray);
+}
+
+// choseSubjectApply.apply(teacher,["Maths","Geography","hist"])
 // console.log(student.getEmail.apply(teacher)); // This is also work as there is no paramter require
 
 /** Bind */
@@ -68,16 +74,16 @@ let callAnotherTimeBind = getEmailId.bind(teacher); // we can use here also by (
 function getEmailIdUpdated(){
     return this.email_id = `${this.first_name}.${this.last_name}@test.com`
 }
-console.log(getEmailIdUpdated.call(teacher));
+// console.log(getEmailIdUpdated.call(teacher));
 // console.log(teacher);
 
 function choseSubjectApply(subject1, subject2){
     
-    console.log(subject1, subject2);
+    // console.log(subject1, subject2);
     return this.subjects = [subject1, subject2]
 }
 
-choseSubjectApply.apply(teacher,["Math","Hindi"])
-console.log(teacher);
+ choseSubjectApply.apply(teacher,["Math","Hindi"])
+// console.log(teacher);
 
 
