@@ -78,3 +78,56 @@ function findMinMax(arr){
 
 const result = findMinMax(array1);
 // console.log("result: ",result);
+
+
+let arrone = [1,2,3,4,5];
+
+let firstElement = arrone[0]
+let lastElement = arrone[arrone.length - 1]
+// console.log(arrone.length);
+// console.log(firstElement);
+// console.log(lastElement);
+// arrone.pop();
+// console.log(arrone);
+
+// console.log(arrone.indexOf(50)); // if -1 means not found
+
+/** Removing element from array using splice method */
+
+// arrone.splice(3,2)
+// console.log(arrone);
+let newArry = arrone.concat([10,20,60])
+// console.log(newArry);
+
+var nestedArray = [1, [2, [[3, 4]], 5], 6];
+//  console.log(nestedArray.flat(3));
+
+function flattenArray(arr) {
+
+    return arr.reduce(function(flat, toFlatten) {
+    
+    return flat.concat(Array.isArray(toFlatten) ? flattenArray(toFlatten) : toFlatten);
+    
+    }, []);
+    
+}
+
+function customFlatternArray(arrayList){
+    let newArray = [];
+    return arrayList.reduce(function(previousValue, currentValue){
+        
+        // console.log(previousValue);
+        // if(Array.isArray(currentValue)){
+        //     customFlatternArray(currentValue)
+        // }
+        // else{
+        //     console.log("else", currentValue);
+        //     return newArray.concat(currentValue)
+            
+        // }
+        // return previousValue.concat(Array.isArray(currentValue) ? customFlatternArray(currentValue) : currentValue);
+        return previousValue.concat(Array.isArray(currentValue) ? customFlatternArray(currentValue) :currentValue)
+    },[])
+    // return newArray;
+}
+console.log(customFlatternArray(nestedArray))
