@@ -1,3 +1,5 @@
+/** Prototypes are the mechanism by which JavaScript objects inherit features from one another. */
+
 // let student = {
 //     name:'Rishi',
 //     lastName:'Pal',
@@ -107,4 +109,4 @@ let a="this is string data";
 // console.log(stud.myData());
 
 console.log(student.getCurrentAge());
-console.log(a.getCurrentAge());
+// console.log(a.getCurrentAge());

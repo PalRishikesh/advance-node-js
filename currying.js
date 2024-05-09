@@ -32,9 +32,43 @@ let addTwo = add(10)(20);
 //     }
 // }
 
-const sendAutoEmail=(to)=>(subject)=>(body)=>`Sending Email with to ${to} with subject ${subject} and body ${body}`;
+/**
+ * Sends an auto-generated email.
+ * @param {string} to - The recipient of the email.
+ * @returns {function} - A function that accepts the subject and body of the email.
+ */
+const sendAutoEmail = (to) => (subject) => (body) => `Sending Email with to ${to} with subject ${subject} and body ${body}`;
 
 let developer1 = sendAutoEmail("Rishikesh.pal@email.com");
 let developer2 = developer1("Rishi is working on JS");
 let developer3 = developer2("Rishi is working on Node and React JS");
-console.log(developer3);
+// console.log(developer3);
+
+
+
+const userObj = {
+    name:"Rishi",
+    age:29
+}
+
+function userInfo(obj){
+    return function(userInfo){
+        return obj[userInfo]
+    }
+}
+
+let result = userInfo(userObj);
+// console.log(result('name'));
+
+/** Infinity currying */
+
+
+function addInfinte(a){
+    return function(b){
+        if(b) return addInfinte(a+b);
+        return a;
+    }
+
+}
+
+console.log(addInfinte(10)(1)(3)());
