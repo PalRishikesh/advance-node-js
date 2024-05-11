@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onscroll="showCount()" style="height: 100%">
+    <section style="height: 150%">
+      <p class="n_count">Normal Count</p>
+      <p class="t_count">Throttle Count</p>
+    </section>
+  </body>
+</html>
+<script>
+  /** Throttling is an effective technique to limit the frequency at which a function is executed. */
+  /** Throttling is useful when you want to ensure that a function is called at a limited rate or frequencey, without missing any important inputs or events  */
+  /** This can be useful in situations where you want to avoid overloading a server, conserving network bandwith or improving the performance of an application. */
+
+  const normalDiv = document.querySelector(".n_count");
+  const throttleDiv = document.querySelector(".t_count");
+  let n_count = 0;
+  let t_count = 0;
+  let isScrolling = true;
+  const normalCount = () => {
+    n_count++;
+    normalDiv.innerHTML = `Normal Count: ${n_count}`;
+  };
+
+  const throttleCount = () => {
+    if (isScrolling === true) {
+      t_count++;
+      throttleDiv.innerHTML = `Throttle Count: ${t_count}`;
+      isScrolling = false;
+      setTimeout(() => {
+        isScrolling = true;
+    }, 1000);
+    }
+    
+  };
+
+  const showCount = () => {
+    normalCount();
+    throttleCount();
+  };
+</script>
