@@ -72,3 +72,15 @@ function addInfinte(a){
 }
 
 console.log(addInfinte(10)(1)(3)());
+
+
+function f(x){
+    x = "x-"+x;
+    return function(y){
+        return function(z){
+            return x+z
+        }
+    }
+}
+
+console.log(f("a")("b")("c"));

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body oncontextmenu="return false">
     <div>
         <div>Discord</div>
         <h2 class="count" data-count="2000">0</h2>
@@ -18,6 +18,13 @@
         <div>Youtube</div>
         <h2 class="count" data-count="250000000">0</h2>
     </div>
+    <hr size="10">
+    <form>
+        <!-- <input type="text" placeholder="Enter password" oncopy="alert('You are not suppose to copy password')"/><br> -->
+        <input type="text" placeholder="Enter password" oncopy="return false"/><br>
+        <!-- <input type="text" placeholder="Enter Confirm password" onpaste="alert('You cant past here')" /><br> -->
+        <input type="text" placeholder="Enter Confirm password" onpaste="return false" /><br>
+    </form>
 </body>
 <script src="./2.js"></script>
 </html>

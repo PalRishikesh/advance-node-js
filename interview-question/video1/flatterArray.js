@@ -14,3 +14,18 @@ function flatternArry(arr,flatArray){
 }
 
 console.log(flatternArry(nestedArray,[]));
+
+const arr = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9,[10,11]]
+];
+
+// console.log(arr.flat());
+const flatArr = arr.reduce((accum, curValue)=>{
+    if(Array.isArray(curValue)){
+        return accum.concat(curValue.flat()) // 
+    }
+    return accum.concat(curValue)
+},[])
+console.log(flatArr);

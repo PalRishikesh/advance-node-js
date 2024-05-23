@@ -27,3 +27,14 @@ var newFriends = friends.map(function (friend) {
     return friend.toUpperCase();
 });
 console.log(newFriends);
+
+exports.sayHello(name){
+    console.log("Hello, "+name);
+}
+exports.PI = 3.141459;
+exports.myObject = {
+    key:"values"
+}
+module.exports.sayHello = sayHello;
+module.exports.PI = PI;
+module.exports.myObject = myObject;

@@ -1,0 +1,109 @@
+<main>
+    <input type="search" id="search" placeholder="Enter your query"/><br/>
+    <div id="suggetionArea">
+
+    </div>
+    
+</main>
+
+<script>
+
+const FAILURE_COUNT = 10;
+const LATENCY = 200;
+
+function getRandomBool(n) {
+  const threshold = 1000;
+  if (n > threshold) n = threshold;
+  return Math.floor(Math.random() * threshold) % n === 0;
+}
+
+function getSuggestions(text) {
+  var pre = 'pre';
+  var post = 'post';
+  var results = [];
+  if (getRandomBool(2)) {
+    results.push(pre + text);
+  }
+  if (getRandomBool(2)) {
+    results.push(text);
+  }
+  if (getRandomBool(2)) {
+    results.push(text + post);
+  }
+  if (getRandomBool(2)) {
+    results.push(pre + text + post);
+  }
+  return new Promise((resolve, reject) => {
+    const randomTimeout = Math.random() * LATENCY;
+    setTimeout(() => {
+      if (getRandomBool(FAILURE_COUNT)) {
+        reject();
+      } else {
+        resolve(results);
+      }
+    }, randomTimeout);
+  });
+}
+
+
+
+    (function(){
+        console.log("Testing")
+        const input = document.getElementById("search");
+        const suggetionArea = document.getElementById("suggetionArea")
+        const onFocus=()=>{
+            suggetionArea.style.display  = "block";
+        }
+
+        const onFocusOut=()=>{
+            suggetionArea.style.display  = "none";
+        }
+
+        const keyUpChange=(e)=>{
+            console.log(e.target.value);
+            const {value } = e.target;
+            processData(value);
+
+        }
+
+
+        const processData = async(value)=>{
+            suggetionArea.innerHTML = "";
+            if(!value){
+                suggetionArea.innerHTML = "";
+                return;
+            }
+            try {
+                
+                const resp = await getSuggestions(value);
+                console.log(resp)
+                if(resp.length){
+                    const list = document.createElement('ul');
+                resp.forEach(element => {
+                    const listItems =document.createElement('li');
+                    listItems.innerHTML = element;
+                    list.appendChild(listItems);
+                });
+                suggetionArea.appendChild(list);
+                }
+              
+
+            } catch (error) {
+                console.log("Errror : ",error);
+            }
+        }
+
+
+        input.addEventListener('focus',onFocus);
+        input.addEventListener('blur',onFocusOut);
+        input.addEventListener('keyup',keyUpChange)
+    })()
+</script>
+
+<style>
+    div#suggetionArea {
+    background-color: #efe7e7;
+    height: 250px;
+    display: none;
+}
+</style>
