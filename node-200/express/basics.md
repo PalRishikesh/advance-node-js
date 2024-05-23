@@ -14,3 +14,8 @@ Q. How do you install Express.js in a Nodejs in a Node.js
 ```
 npm install express
 ```
+Q. How to create an HTTP Server using Express.js
+![express server creation](express-server.png)
+
+Q. How do you create and start Express.js application
+![express server creation](express-start.png)

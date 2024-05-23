@@ -74,7 +74,7 @@ Q. How to import single and multiple function from a module?
     ```
 
 Q. What is module wrapper function?\
-- In node.js each module is wrapped in a function called the "module wrapper function" befire it is executed.\
+- In node.js each module is wrapped in a function called the "module wrapper function" befire it is executed.
 - It's try to convert/wrapped normal js file to below file
 ```js
 (function(exports, require, module, __filename, __dirname) {
