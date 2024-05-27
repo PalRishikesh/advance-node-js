@@ -1,0 +1,23 @@
+### Error Handling
+![errorHandle](img/error-handle1.png)
+![errorHandle](img/try1.png)
+[Above code](code/try-catch-finally.js)
+![errorHandle](img/try2.png)
+[Above code](code/erro-first-callback.js)
+![errorHandle](img/promise1.png)
+![errorHandle](img/promise2.png)
+![errorHandle](img/debug.png)
+
+### Security, Performance & Deployment
+![xss](img/xss1.png)
+![xss](img/xss2.png)
+![xss](img/xss3.png)
+![xss](img/xss4.png)
+![xss](img/performance.png)
+![xss](img/deploy.png)
+![testing](img/testing-type.png)
+![testing](img/tesing-framework.png)
+![testing](img/jest.png)
+![testing](img/jest2.png)
+![testing](img/tdd.png)
+![testing](img/web-socket.png)
