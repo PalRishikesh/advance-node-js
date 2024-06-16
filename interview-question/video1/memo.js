@@ -73,25 +73,25 @@ const memeoizeAddFn = (fn)=>{
         }   
     }
 }
-const memoAdd = memeoizeAddFn(add)
+// const memoAdd = memeoizeAddFn(add)
 
-console.time()
-console.log(memoAdd(10,30))
-console.timeEnd()
+// console.time()
+// console.log(memoAdd(10,30))
+// console.timeEnd()
 
-console.time()
-console.log(memoAdd(10,30))
-console.timeEnd()
+// console.time()
+// console.log(memoAdd(10,30))
+// console.timeEnd()
 
 
-console.time()
-console.log(memoAdd(10,20))
-console.timeEnd()
+// console.time()
+// console.log(memoAdd(10,20))
+// console.timeEnd()
 
-console.time()
-console.log(memoAdd(10,40))
-console.timeEnd()
+// console.time()
+// console.log(memoAdd(10,40))
+// console.timeEnd()
 
-console.time()
-console.log(memoAdd(10,30))
-console.timeEnd()
+// console.time()
+// console.log(memoAdd(10,30))
+// console.timeEnd()

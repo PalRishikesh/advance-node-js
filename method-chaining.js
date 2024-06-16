@@ -50,3 +50,6 @@ class CalcuaterClass {
 
 let cc = new CalcuaterClass();
 console.log(cc.add(25).sub(5).print());
+
+
+

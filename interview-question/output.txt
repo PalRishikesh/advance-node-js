@@ -1,0 +1,1 @@
+This is code to write in stream file

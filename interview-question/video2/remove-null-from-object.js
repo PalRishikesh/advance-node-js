@@ -26,4 +26,4 @@ const arrayData = [
     ['d',4]
 ]
 const arryObj = Object.fromEntries(arrayData);
-console.log(arryObj);
+// console.log(arryObj);

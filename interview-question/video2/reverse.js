@@ -10,4 +10,4 @@ const revInt = (num)=>{
 }
 
 
-console.log(revInt(123));
+console.log(revInt("123"));

@@ -2,7 +2,7 @@
 /** We can't access function inner value out side of function (Opp we can do) */
 
 /** Closure */
-/** Closure in action that is inner function can have access to the outer function/ parent function variable/parameters as well as all the global variable */
+/** Closure in action that is inner function can have access to the outer function/ parent function variable  as well as all the global variable */
 /**Closure in JavaScript is a form of lexical scoping used to preserve variables 
  * from the outer scope of a function in the inner scope of a function. */
 
@@ -17,7 +17,7 @@ function test(){
     console.log(data);
 }
 // console.log(a); // This is outside of function 
-// test().
+// test()
 
 
 function test2(){
