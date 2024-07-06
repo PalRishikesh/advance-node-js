@@ -1,1 +1,51 @@
 Knowing how to write a paragraph is incredibly important. It’s a basic aspect of writing, and it is something that everyone should know how to do. There is a specific structure that you have to follow when you’re writing a paragraph. This structure helps make it easier for the reader to understand what is going on. Through writing good paragraphs, a person can communicate a lot better through their writing.
+
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+const arr = [
+    {
+        name:"rahul"
+    },
+    {
+        name:"akash"
+    },
+    {
+        name:"varun"
+    },
+     {
+        name:"varun"
+    }
+    ]
+    
+const sorted = arr.sort((a,b) => b.name.localeCompare(a.name));
+
+// console.log(sorted)
+
+let a = [];
+
+for(let i=0; i< arr.lenght; i++){
+  set.add(arr[i]);
+}
+
+console.log(set)
+
+const filterData = arr.filter((single,i,self) => {
+  
+ 
+  
+  // self.findIndex((value)=>{
+  //     console.log(value)
+  //   })
+
+    // if(self.findIndex(single) == -1){
+      
+    // }
+})
+
+// console.log(filterData);
+
+// AWS step function, cloud formation, large function, etc
+
+

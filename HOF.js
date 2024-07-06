@@ -66,3 +66,28 @@ Array.prototype.customMap = function(x){
 
 let arrayResult = data3.customMap((item)=> item * 2); // we can do -,+,/, etc
 console.log(arrayResult);
+
+
+const twoArray = [[4, 8,9,7,8,9,6], [4, 7,8,9,9,6,5]]
+
+const singleArray = twoArray.flat()
+
+console.log(singleArray)
+
+function findSecondHighestNumber(arr){
+    let firstHighest = arr[0];
+    let secondHighest = arr[0];
+    
+    for(let i=0; i< arr.length; i++){
+        if(arr[i] >= firstHighest){
+             if(arr[i] != firstHighest){
+                 secondHighest = firstHighest;
+             }
+            firstHighest = arr[i];
+        }
+    }
+    
+    return secondHighest;
+}
+
+console.log(findSecondHighestNumber(singleArray))
