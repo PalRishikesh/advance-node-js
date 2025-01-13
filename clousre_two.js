@@ -26,3 +26,34 @@ var summation = function(a,b,c){
 var storeSummation = summation(1,5,9);
 console.log(storeSummation.getTwoSum());
 console.log(storeSummation.getThreeSum());
+
+
+const privateCounter = ()=>{
+    let count = 0;
+
+    return{
+        increment:(val = 1)=>{
+            count +=val;
+        },
+        getValue:()=>{
+            return count;
+        }
+    }
+}
+
+const counter = privateCounter();
+console.log(counter.getValue());
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+console.log(counter.getValue()); // We cant access count value, but we can access by function
+
+
+const privateSecret=()=>{
+    const secret='foo';
+    return ()=>secret;
+}
+
+const getSecret= privateSecret()
+console.log(getSecret());

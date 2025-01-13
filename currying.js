@@ -84,3 +84,73 @@ function f(x){
 }
 
 console.log(f("a")("b")("c"));
+
+
+
+
+ 
+
+// Create a currying function
+// foo(1,2,3), foo(1)(2)(3)
+
+const curry = function (fn){
+    var arity = fn.length;
+    console.log(arity);
+    return function f1(...args){
+        if(args.length >= arity){
+         return fn(...args)
+        }
+        else{
+            return function f2(...moreArgs){
+                var newArgs = args.concat(moreArgs);
+                return f1(...newArgs)
+            }
+        }
+    }
+}
+
+
+const curriedSum = curry((a,b,c)=>a+b+c);
+const fullSum = curriedSum(1,2,3)
+// console.log(fullSum);
+const partiallyCurriedSum = curriedSum(1)
+// console.log(partiallyCurriedSum(2)(4));
+
+//User cases
+const get = curry((property,object)=>object[property]);
+const getId = get("id");
+// console.log(getId({"id":35}));
+
+
+
+const arr6 = [1,2,3,4,4,5,6,7,8,9,9];
+
+const uniqueArr = (arr)=>{
+    return arr.reduce((acc,el)=>{
+        return acc.includes(el) ? acc:[...acc, el]
+    },[])
+}
+
+// console.log(uniqueArr(arr6));
+
+const arr7 = [3,5,1];
+// const result7 = arr7.sort((a,b)=>(a<b ? -1: 1)); 
+const result7 = arr7.sort((a,b)=>(a-b)); 
+// console.log(result7);
+
+
+const range = (start,end)=>{
+    return [... Array(end -start).keys()].map(el=>el+start);
+}
+
+// console.log(range(0,50));
+
+const shuffleItems = (items)=>{
+    return items.map((item)=> ({sort: Math.random(), value:item}))
+    .sort((item1, item2)=>item1.sort - item2.sort)
+    .map((a)=>a.value)
+}
+
+console.log(shuffleItems([1,2,3]));
+
+
